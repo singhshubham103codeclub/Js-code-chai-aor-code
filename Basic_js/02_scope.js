@@ -16,5 +16,12 @@ function one(){
     console.log(website)
     two()
 }
-one()
-
+// one()
+const addone= function(num){
+    return num+2;
+}
+// console.log(addone(5))
+addtwo(5)
+const addtwo= function(num){
+    return num+2;
+}

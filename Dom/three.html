@@ -16,7 +16,10 @@ div.id=Math.round(Math.random()*10+1)
 div.setAttribute("tittle","generated tittle")
 div.style.backgroundColor="red"
 div.style.padding="12px"
-// div.innerHTML="helllo"
-
+div.innerHTML="helllo"
+const addTextNode=document.createTextNode("chai aor code")
+div.appendChild(addTextNode)
+// adding in document in body
+document.body.appendChild(div)
 </script>
 </html>

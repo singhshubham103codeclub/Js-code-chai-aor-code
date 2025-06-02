@@ -15,4 +15,29 @@
     <h1>Chai aor code aor event</h1>
     <button id="button">stop</button>
 </body>
+<script>
+    // setTimeout(function(){
+    //     console.log("hii shubh")
+    // },2000)
+    // --------------------------------------------------
+//    setTimeout using reference 
+// const sayshubh=function(){
+//     console.log("say shubh")
+// }
+// setTimeout(sayshubh,2000)
+// ----------------------------------------------------
+// change html contant by setTimeout
+// document.querySelector("h1").innerHTML
+// ="best js course"
+const changetext=function(){
+    document.querySelector("h1").innerHTML
+="best js course"
+}
+const changeme=setTimeout(changetext,2000)//here catch reference of settimeout func
+// clear setTimeout using stop button
+document.querySelector("#button").addEventListener("click",function(){
+    clearTimeout(changeme)//here pass reference of settimeout func
+    console.log("stop")
+})
+</script>
 </html>

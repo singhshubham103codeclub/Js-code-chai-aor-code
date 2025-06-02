@@ -21,6 +21,14 @@
     console.log(str ,"shubh",Date.now())
    }
 //    setInterval(name,3000)
-// const catch=setInterval(name,3000,"hi")//setinterval with passing perameter
+const setcatch=setInterval(name,3000,"hi")//setinterval with passing perameter
+document.querySelector("#button").addEventListener("click",function(){
+    clearInterval(setcatch)
+    console.log("stop")
+    document.querySelector("#button2").addEventListener("click",function(){
+    //   setInterval(name,3000)
+      console.log("start")  
+    })
+})
 </script>
 </html>

@@ -1,37 +1,49 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-.bg{
-    background-color: black;
-    color: aliceblue;
-}
+        .bg {
+            background-color: black;
+            color: aliceblue;
+        }
     </style>
 </head>
+
 <body class="bg">
-    <h1>start shoud the background color evevry second</h1>
-   <button id="start">start</button> 
-   <button id="stop">stop</button>
+    <h1>Background color should change every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
 </body>
+
 <script>
+    // ✅ Correct function to generate random hex color
     function getRandomColor() {
-  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-  return `#${randomColor.padStart(6, '0')}`;
-}
-const changecolor=function(getRandomColor){
-document.getElementsByClassName(".bg").style.backgroundColor =getRandomColor()
-}
-let changebg;
-document.querySelector("#start").addEventListener("click",function(){
-    console.log("start")
-    changebg=setInterval(changecolor,1000)
-})
-document.querySelector("#stop").addEventListener("click",function() {
-   clearInterval(changecolor)
-   console.log("stop") 
-})
+        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        return `#${randomColor.padStart(6, '0')}`;
+    }
+
+    let changebg;
+
+    // ✅ Fix: changecolor should NOT accept getRandomColor as parameter
+    function changecolor() {
+        // ✅ Fix: getElementsByClassName returns a collection — use [0] or querySelector
+        document.querySelector(".bg").style.backgroundColor = getRandomColor();
+    }
+
+    // ✅ Start button handler
+    document.querySelector("#start").addEventListener("click", function () {
+        console.log("start");
+        changebg = setInterval(changecolor, 1000);
+    });
+
+    // ✅ Stop button handler
+    document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(changebg);  // ❌ You were clearing the function, not the interval ID
+        console.log("stop");
+    });
 </script>
+
 </html>

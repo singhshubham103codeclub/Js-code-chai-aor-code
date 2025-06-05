@@ -25,6 +25,13 @@ const changecolor=function(getRandomColor){
 document.getElementsByClassName(".bg").style.backgroundColor =getRandomColor()
 }
 let changebg;
-document.querySelector
+document.querySelector("#start").addEventListener("click",function(){
+    console.log("start")
+    changebg=setInterval(changecolor,1000)
+})
+document.querySelector("#stop").addEventListener("click",function() {
+   clearInterval(changecolor)
+   console.log("stop") 
+})
 </script>
 </html>

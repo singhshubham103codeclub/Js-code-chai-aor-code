@@ -13,10 +13,18 @@
 </head>
 <body class="bg">
     <h1>start shoud the background color evevry second</h1>
-   <button>start</button> 
-   <button>stop</button>
+   <button id="start">start</button> 
+   <button id="stop">stop</button>
 </body>
 <script>
-    
+    function getRandomColor() {
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  return `#${randomColor.padStart(6, '0')}`;
+}
+const changecolor=function(getRandomColor){
+document.getElementsByClassName(".bg").style.backgroundColor =getRandomColor()
+}
+let changebg;
+document.querySelector
 </script>
 </html>

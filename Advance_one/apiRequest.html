@@ -11,7 +11,15 @@
 </body>
 <script>
     const requestUrl='https://redesigned-acorn-g4w677qx545hwqqr.github.dev/'
-    const xhr=new XMLHttpRequest();
-    xhr.open('GET',requestUrl)
+    const xhr=new XMLHttpRequest();//make class to object
+    xhr.open('GET',requestUrl)//open method take two perameter method and strong
+    // call open method to send request
+    // console.log("here")
+    // console.log(xhr.readyState)//to check state of request
+    //to countiniou trake state
+    xhr.onreadystatechange=function(){//take fun to perform something
+        console.log(xhr.readyState);
+    }
+xhr.send();
 </script>
 </html>

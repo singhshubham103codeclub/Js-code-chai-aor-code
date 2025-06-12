@@ -10,7 +10,7 @@
     
 </body>
 <script>
-    const requestUrl='https://redesigned-acorn-g4w677qx545hwqqr.github.dev/'
+    const requestUrl='https://randomuser.me/api/'
     const xhr=new XMLHttpRequest();//make class to object
     xhr.open('GET',requestUrl)//open method take two perameter method and strong
     // call open method to send request
@@ -19,7 +19,11 @@
     //to countiniou trake state
     xhr.onreadystatechange=function(){//take fun to perform something
         console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            // console.log(this.responseText)// to usebreturn return response o f request
+            
+        }
     }
-xhr.send();
+    xhr.send();
 </script>
 </html>
